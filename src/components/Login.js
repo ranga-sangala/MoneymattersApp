@@ -1,27 +1,38 @@
 import React,{useState} from 'react'
-
+import Cookies from 'js-cookie'
 
 
 const Login = () => {
-      const [email,setEmail] = useState()
-      const [password,setPassword] = useState()
+      const [email,setEmail] = useState('')
+      const [password,setPassword] = useState('')
       
-      async function onSubmitForm() {
 
-           
-           try {
-            const userDetails = {email,password};
+     function onSubmitSuccess(jwt_token) {
+           localStorage.setItem("TOKEN",jwt_token)
+           window.location.href= '/dashboard'
+     }
+     
+     const onSubmitFailure = () => {
+
+     }
+      
+      async function onSubmitForm(event) {
+        
+           const userDetails = {email,password};
            const url = ("https://bursting-gelding-24.hasura.app/api/rest/get-user-id")
            const options = {
-            method:"PUT",
+            method:"POST",
+            headers: {
+                'Content-Type': 'application/json',
+              },
             body:JSON.stringify(userDetails)
            }
            const response = await fetch(url,options);
            const data = await response.json();
-           console.log(data)
-            
-           } catch (error) {
-            console.log(error.msg)
+           if(response.ok === true){
+              onSubmitSuccess(data.jwt_token)
+           } else{
+            onSubmitFailure(data.error_msg)
            }
       }
       

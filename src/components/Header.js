@@ -11,7 +11,7 @@ const Header = () => {
         </div>
         <div className='d-flex flex-column m-2'>
        <Link className='component d-flex m-4' to='/dashboard'><i className="bi bi-house-door-fill px-1"></i><p className='px-3'>Dashboard</p></Link>
-       <Link className='component d-flex m-2' to='/transctions'><svg className='mr-3 px-1' xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 25 25" fill="none">
+       <Link className='component d-flex m-2' to='/transactions'><svg className='mr-3 px-1' xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 25 25" fill="none">
   <g clip-path="url(#clip0_1_1799)">
     <path d="M5.2085 22.9167C5.20915 23.469 5.42885 23.9986 5.81941 24.3891C6.20997 24.7797 6.7395 24.9994 7.29183 25H17.7085C18.2608 24.9994 18.7904 24.7797 19.1809 24.3891C19.5715 23.9986 19.7912 23.469 19.7918 22.9167V22.0052H5.2085V22.9167Z" fill="#5B73A0"/>
     <path d="M19.7918 2.08333C19.7912 1.531 19.5715 1.00148 19.1809 0.610917C18.7904 0.220358 18.2608 0.00065473 17.7085 0L7.29183 0C6.7395 0.00065473 6.20997 0.220358 5.81941 0.610917C5.42885 1.00148 5.20915 1.531 5.2085 2.08333V3.125H19.7918V2.08333Z" fill="#5B73A0"/>

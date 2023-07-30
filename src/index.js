@@ -29,13 +29,17 @@ const router = createBrowserRouter([
     path:'/',
     element:<AppLayOut/>,
     children:[
+      {
+        path:"/app",
+        element:<AppLayOut/>
+      },
       
       {
         path:"/dashboard",
         element:<Dashboard/>
       },
       {
-        path:"/transctions",
+        path:"/transactions",
         element:<Transactions/>
       },
       {
